@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp对象</title>
+    <script>
+        /*
+            RegExp：正则表达式对象
+                1.正则表达式
+                    语法
+                        /正则表达式主体/修饰符(可选)
+                    1.单个字符：[]
+                        如：[a] [ab] [a-zA-Z]
+                        *特殊符号代表特殊含义的单个字符
+                            \d:单个数字字符[0-9]
+                            \w:单个单词字符[a-zA-Z0-9_]
+                    2.量词符号：
+                        *:表示出现0次或多次
+                        ?:表示出现0次或1次
+                        +:表示出现1次或多次
+                        {m,n}:表示  m<=数量<=n
+                             m如果缺省：{,n}：最多n次
+                             n如果缺省：{m,}：最少m次
+
+
+
+                        如 \w* 表示出现0次或多个单词字符
+                            \w{6,12}
+                    3.修饰符
+                        i:执行对大小写不敏感的匹配。
+                        g:执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
+                        m:执行多行匹配。
+                    4.支持正则表达式的String对象的方法
+                        search:检索与正则表达式相匹配的值。   返回最开始位置下标
+                        match:找到一个或多个正则表达式的匹配。
+                        replace:替换与正则表达式匹配的子串。
+                        split:把字符串分割为字符串数组。
+                    5. 开始结束符号
+                        ^:开始
+                        $:结束
+                2.正则对象：
+                    创建
+                            * var re = new RegExp("正则表达式");
+                            * var reg = /正则表达式/;
+                3.RegExp对象方法
+                    compile:编译正则表达式。
+                    exec:检索字符串中指定的值。返回找到的值，并确定其位置。
+                    test:验证指定的字符串是否符合正则定义的规范。返回 true 或 false。
+         */
+
+        //例1：找到是单词字符的子串
+        var str="Give 100%!";
+        var patt1=/\w/g;
+        document.write(str.match(patt1) + "<br>");
+        //例2:查找子串并替换
+        var str = "runOob";
+        var patt2 = /runoob/i;
+        document.write(str.replace(patt2, "person") + "<br>");
+        //
+        var str1 = "zhangsan";
+        var str2 = "zzzzzzzzzzzzzzzzzzzzz";
+        var reg2=/^\w{6,12}$/;
+        document.write(reg2.test(str1) + "<br>");   //由于未超过12位，故返回true
+        document.write(reg2.test(str2) + "<br>");   //由于超出了12位，故返回false
+
+
+
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

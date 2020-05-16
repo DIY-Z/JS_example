@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常见事件演示</title>
+
+    <script>
+
+        //2. onload 加载完成事件
+        window.onload=function () {
+            /*
+            document.getElementById("username").onblur = function () {
+                alert("失去焦点");
+            }
+            */
+
+
+/*
+            //3. onmouseover  鼠标移到某元素之上
+            document.getElementById("username").onmouseover = function () {
+                alert("鼠标来了");
+            }
+*/
+            /*
+            //3. onmouseover  鼠标点击某元素
+            document.getElementById("username").onmousedown = function (event) {
+                //alert("鼠标点击了");
+                alert(event.button);
+            }
+
+             */
+            /*
+            document.getElementById("sel").onchange = function () {
+                alert("改变了");
+            }
+
+             */
+            /*
+            document.getElementById("form").onsubmit=function () {
+                //校验用户名格式是否正确
+                var flag = false;
+
+                //返回false时，会阻止表单提交
+                return flag;
+            }
+
+             */
+        }
+        function checkForm(){
+            return false;
+        }
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+    <!--
+            下面那行被注释的onclick代码相当于
+            function fun(){
+                checkForm();
+            }
+            故需要改成这样：
+            function fun(){
+                return checkForm();
+            }
+    -->
+
+<!--    <form action="#" id="form" onclick="checkForm()">-->
+    <form action="#" id="form" onclick="return checkForm()">
+
+        <input type="text" name="username" id="username">
+
+        <select id="sel">
+            <option>请选择</option>
+            <option>北京</option>
+            <option>上海</option>
+            <option>广东</option>
+
+        </select>
+
+        <input type="submit" value="提交">
+    </form>
+
+
+
+
+
+<!--    <script>-->
+<!--        //1. onblur 失去焦点事件-->
+<!--        //        * 一般用于表单验证-->
+<!--        document.getElementById("username").onblur=function () {-->
+<!--            alert("失去焦点");-->
+<!--        }-->
+<!--    </script>-->
+
+</body>
+</html>

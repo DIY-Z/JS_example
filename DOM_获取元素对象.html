@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1 id="h1">hh</h1>
+
+
+</head>
+<body>
+
+    <img id="light" src="img/pic_bulboff.gif">
+
+    <script>
+        //通过id来获取元素对象
+        var light = document.getElementById("light");
+        alert("换图片");
+        light.src="img/pic_bulbon.gif";
+
+        var s = document.getElementById("h1");
+        s.innerHTML = "呵呵";
+
+    </script>
+
+</body>
+</html>

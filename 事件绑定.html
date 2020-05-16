@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <!-- 第一种调用方式 -->
+    <script>
+        function fun() {
+            document.getElementById("demo").innerHTML="hh";
+        }
+    </script>
+
+</head>
+<body>
+
+
+<p id="demo"></p>
+<img id="light1" src="img/pic_bulboff.gif" onclick="fun()">
+<img id="light2" src="img/pic_bulboff.gif">
+
+<!-- 第二种调用方式，相比第一种而言，这种方式耦合性较低。注意和第一种的区别 -->
+<script>
+    function fun2() {
+        document.getElementById("demo").innerHTML="呵呵";
+    }
+    var light1 = document.getElementById("light2");
+    light1.onclick=fun2;        //注意后面不要加括号
+</script>
+
+
+</body>
+</html>

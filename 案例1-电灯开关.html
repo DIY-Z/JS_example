@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯开关</title>
+    <style>
+        #light{
+            float:right;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+<img id="light" src="img/pic_bulboff.gif">
+
+<script>
+    //获取图片对象
+    var light = document.getElementById("light");
+    var flag = false;       //代表灯是灭的
+    //绑定单击事件
+    light.onclick=function(){
+        if(flag){
+            light.src="img/pic_bulbon.gif";
+            flag=false;
+        }else{
+            light.src="img/pic_bulboff.gif";
+            flag=true;
+        }
+
+
+    }
+
+</script>
+
+</body>
+</html>
